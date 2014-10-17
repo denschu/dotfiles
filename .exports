@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Let stuff installed via brew be before the system stuff
+export PATH="/usr/local/bin:$PATH"
+
+# Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# SBT JVM-Options
+export SBT_OPTS="-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:PermSize=256M -XX:MaxPermSize=512M"
+
+# Default Editor
+export EDITOR=nano
+
+# Maven configuration
+export M2_REPO="$HOME/.m2/repository"
+export M2_HOME="/usr/local/Cellar/maven/3.1.1/libexec"
+export M2="/usr/local/Cellar/maven/3.1.1/libexec/bin"
+
+# JAVA_HOME for Oracle's JDK
+#export JAVA_HOME=$(stat -f "%N" /Library/Java/JavaVirtualMachines/*/Contents/Home/ | tail -1)
+export JAVA_HOME=`/usr/libexec/java_home -version 1.7`
+
+export DOCKER_HOST=tcp://127.0.0.1:4243

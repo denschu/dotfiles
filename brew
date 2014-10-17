@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Install brew
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+# Temporarily add brew's bin directory to the path so that
+# this problem will not be reported by brew doctor.
+export PATH="/usr/local/bin:$PATH"
+ 
+# Make sure brew is up to date
+brew update
+brew upgrade
+
+# Check that everything is ok with the system config
+brew doctor
+ 
+# Install command line tools
+brew install ack \
+#			 ant \
+#			 autoconf \
+#			 automake \
+#			 bash \
+#			 curl \
+#			 gibo \
+			 git \
+#			 ivy \
+#			 leiningen \
+			 maven \
+#			 mercurial \
+#			 ncdu \
+#			 python \
+#			 sbt \
+			 terminal-notifier \
+#			 tmux \
+#			 tree \
+#			 vim \
+#			 wget
+
+
+# Install cask so that we can install standard apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+ 
+function installcask() {
+  brew cask install "${@}" 2> /dev/null
+}
+ 
+#installcask dropbox
+#installcask google-chrome
+#installcask google-chrome-canary
+#installcask firefox
+#installcask imagealpha
+#installcask imageoptim
+#installcask iterm2
+#installcask miro-video-converter
+#installcask sublime-text-3
+#installcask the-unarchiver
+#installcask ukelele
+installcask virtualbox
+#installcask vlc
+#installcask dash
+#installcask caffeine
+#installcask wireshark
+#installcask sourcetree
+#installcask google-hangouts
+#installcask divvy
+#installcask skype
+#installcask keepass-x
+#installcask kindle
+#installcask spotify
+#installcask tunnelblick
+#installcask light-table
+#installcask libre-office
+#installcask iterm2
+#installcask inkscape
+#installcask heroku-toolbelt
+#installcask balsamiq-mockups
+#installcask xmind
+#installcask gimp
+#installcask vagrant
+#installcask tor-browser
+#installcask steam
+#installcask hipchat
+ 
+brew cleanup
+#

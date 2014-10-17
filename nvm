@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Install NVM
+curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+
+# Download last stable Node.JS version
+node_version="0.10"
+nvm install $node_version
+
+# Set stable version as default version
+nvm alias default $node_version

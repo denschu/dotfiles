@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+# make sure that address resolution for the custom hostname works
+sudo sh -c 'echo "127.0.0.1    denschu\n" >> /etc/hosts'
