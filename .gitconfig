@@ -6,19 +6,9 @@
 	email = mail@dennis-schulte.de
 
 [core]
-	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.dotfiles/.gitignore
-	attributesfile = ~/.dotfiles/.gitattributes
-	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
-	# all kinds of trailing whitespace as an error.
-	# [default] trailing-space: looks for spaces at the end of a line
-	# [default] space-before-tab: looks for spaces before tabs at the beginning of
-	# a line
-	whitespace = space-before-tab,indent-with-non-tab,trailing-space
-
-[alias]
-	serve = !git daemon --reuseaddr --verbose --base-path=. --export-all ./.git
-[filter "media"]
+	autocrlf = input
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
 	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f

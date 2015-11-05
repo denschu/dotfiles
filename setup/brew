@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Install brew
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+
+# Temporarily add brew's bin directory to the path so that
+# this problem will not be reported by brew doctor.
+export PATH="/usr/local/bin:$PATH"
+ 
+# Make sure brew is up to date
+brew update
+brew upgrade
+
+# Check that everything is ok with the system config
+brew doctor
+ 
+# Install command line tools
+brew install ack \
+			 git \
+			 maven
+
+
+# Install cask so that we can install standard apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+ 
+function installcask() {
+  brew cask install "${@}" 2> /dev/null
+}
+ 
+installcask dropbox
+installcask google-chrome
+installcask firefox
+installcask iterm2
+installcask sublime-text-3
+installcask the-unarchiver
+installcask virtualbox
+installcask vlc
+installcask google-hangouts
+installcask spotify
+installcask tunnelblick
+installcask vagrant
+installcask slack
+ 
+brew linkapps
+brew cleanup
+#

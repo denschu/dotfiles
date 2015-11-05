@@ -8,7 +8,7 @@ link() {
   ln -s $from $to
 }
 
-# Link necessary files
+echo "Link necessary files"
 for file in .{bashrc,gitconfig}; do
 	link $file $file
 done
