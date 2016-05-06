@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
 
-export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`
-export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`
+#export JAVA_6_HOME=`/usr/libexec/java_home -v 1.6`
+#export JAVA_7_HOME=`/usr/libexec/java_home -v 1.7`
 export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_HOME=$JAVA_7_HOME
+export JAVA_HOME=$JAVA_8_HOME
 
 # Maven configuration
 export M2_REPO="$HOME/.m2/repository"
-export M2_HOME="/usr/local/Cellar/maven/3.1.1/libexec"
-export M2="/usr/local/Cellar/maven/3.1.1/libexec/bin"
-export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m"
+export M2_HOME="/usr/local/Cellar/maven/3.3.3/libexec"
+export M2="/usr/local/Cellar/maven/3.3.3/libexec/bin"
+#export MAVEN_OPTS="-Xmx512m -XX:MaxPermSize=128m"
 
 # For secure Docker usage
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH="$HOME/.boot2docker/certs/boot2docker-vm"
+export DOCKER_HOST=tcp://192.168.99.100:2376
+export DOCKER_MACHINE_NAME=gosys
 export DOCKER_TLS_VERIFY=1
+export DOCKER_CERT_PATH="$HOME/.docker/machine/machines/gosys"
+# Standard Docker configuration
+eval "$(docker-machine env gosys)"
+
+source /Users/denschu/.dvm/dvm.sh

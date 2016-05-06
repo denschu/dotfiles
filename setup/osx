@@ -4,27 +4,91 @@
 
 # Ask for the administrator password upfront
 sudo -v
-
 # Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "denschu"
 sudo scutil --set HostName "denschu"
 sudo scutil --set LocalHostName "denschu"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "denschu"
-
+# Menu bar: show remaining battery time (on pre-10.8); hide percentage
+defaults write com.apple.menuextra.battery ShowPercent -string „YES“
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
-
+# Save to disk, rather than iCloud, by default?
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+###############################################################################
+# Time Machine                                                                #
+###############################################################################
+# Disable local Time Machine backups
+hash tmutil &> /dev/null && sudo tmutil disablelocal
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+# Finder: show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# Finder: show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+# Display full POSIX path as Finder window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# Show the ~/Library folder
+chflags nohidden ~/Library
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+# Set the icon size of Dock items to 36 pixels
+defaults write com.apple.dock tilesize -int 36
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# Top left screen corner → Mission Control
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 0
+# Top right screen corner → Desktop
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0
+# Bottom left screen corner → Start screen saver
+defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-bl-modifier -int 0
+###############################################################################
+# Atom                                                                      #
+###############################################################################
+defaults write com.github.atom AppleShowAllFiles -bool true
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
-
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" \
 	"Messages" "Safari" "SizeUp" "SystemUIServer" "Terminal" "Transmission" \
 	"Twitter" "iCal"; do

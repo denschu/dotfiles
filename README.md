@@ -1,8 +1,8 @@
-# denschu's Dotfiles
+# denschu's dotfiles
 
 ## Installation
 
 ```
-git clone git@github.com:denschu/dotfiles.git ~/.dotfiles
+git clone git@github.com:denschu/.dotfiles.git ~/.dotfiles
 bash ~/.dotfiles/link
 ```
