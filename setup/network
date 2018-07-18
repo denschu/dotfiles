@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -e
 
 # make sure that address resolution for the custom hostname works

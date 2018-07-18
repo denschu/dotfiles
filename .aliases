@@ -19,7 +19,9 @@ restore-atom-packages() {
   cat $HOME/.dotfiles/atom-packages | xargs apm install
 }
 
-# GoSys
-alias pull='for dir in ~/gosys/git/*; do echo "->" $dir && cd $dir && git pull && cd ..; done'
-alias status='for dir in ~/gosys/git/*; do echo "->" $dir && cd $dir && git status && cd ..; done'
-alias push='for dir in ~/gosys/git/*; do echo "->" $dir && cd $dir && git push && cd ..; done'
+# Git
+alias pull='for dir in ~/puc/git/*; do echo "->" $dir && cd $dir && git pull && cd ..; done'
+alias status='for dir in ~/puc/git/*; do echo "->" $dir && cd $dir && git status && cd ..; done'
+alias push='for dir in ~/puc/git/*; do echo "->" $dir && cd $dir && git push && cd ..; done'
+
+alias cleanup='docker rmi -f $(docker images -q -f dangling=true)'

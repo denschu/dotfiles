@@ -13,38 +13,55 @@ brew upgrade
 brew doctor
 
 # Install command line tools
+brew install zsh
 brew install git
-brew install Caskroom/cask/java
 brew install maven
 brew install node
 brew install npm
-brew install rpm
-brew install rpmbuild
-brew install mtr
-brew install ssh-copy-id
-brew install michaeldfallen/formula/git-radar
+
+# optional packages
+#brew install ssh-copy-id
+#brew install httpie
+#brew install tmux
+#brew install telnet
+#gem install tmuxinator
+#brew install dvm
+#brew install terraform
 
 # Install cask so that we can install standard apps
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
+brew cask install java8
 brew cask install iterm2
 brew cask install slack
-brew cask install dropbox
-brew cask install vlc
 brew cask install spotify
-brew cask install firefox
-brew cask install google-hangouts
-brew cask install chitchat
-brew cask install github-desktop
-brew cask install evernote
-brew cask install the-unarchiver
 brew cask install outbank
-brew cask install vagrant
-brew cask install forklift
 brew cask install google-chrome
 brew cask install 1password
 brew cask install tunnelblick
-brew cask install vagrant
-brew cask install virtualbox
-brew cask install twitter
+brew cask install sublime-text
+
+# optional packages
+#brew cask install the-unarchiver
+#brew cask install vagrant
+#brew cask install forklift
+#brew cask install vagrant
+#brew cask install virtualbox
+#brew cask install vlc
+
 brew linkapps
 brew cleanup
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# bash-completions
+brew install bash-completion
+brew tap homebrew/completions
+cd /usr/local/etc/bash_completion.d
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
+ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
+
+#powerline fonts
+# https://github.com/powerline/fonts
+# Meslo: https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf
+# https://gist.github.com/kevin-smets/8568070

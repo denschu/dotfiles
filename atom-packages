@@ -3,3 +3,8 @@ compare-files
 language-docker
 monokai
 merge-conflicts
+atom-beautify
+linter
+linter-eslint
+react
+editorconfig
