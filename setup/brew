@@ -38,9 +38,10 @@ brew cask install outbank
 brew cask install google-chrome
 brew cask install 1password
 brew cask install tunnelblick
-brew cask install sublime-text
+brew cask install vscode
 
 # optional packages
+#brew cask install sublime-text
 #brew cask install the-unarchiver
 #brew cask install vagrant
 #brew cask install forklift
@@ -61,7 +62,7 @@ cd /usr/local/etc/bash_completion.d
 ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
 ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
 
-#powerline fonts
+# powerline fonts
 # https://github.com/powerline/fonts
 # Meslo: https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf
 # https://gist.github.com/kevin-smets/8568070
