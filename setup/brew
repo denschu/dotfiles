@@ -12,33 +12,18 @@ brew upgrade
 # Check that everything is ok with the system config
 brew doctor
 
-# Install command line tools
-brew install zsh
-brew install git
-brew install maven
-brew install node
-brew install npm
-
-# optional packages
-#brew install ssh-copy-id
-#brew install httpie
-#brew install tmux
-#brew install telnet
-#gem install tmuxinator
-#brew install dvm
-#brew install terraform
-
 # Install cask so that we can install standard apps
 brew tap caskroom/cask
-brew cask install java8
+brew cask install java
+#brew cask install java8
 brew cask install iterm2
 brew cask install slack
-brew cask install spotify
-brew cask install outbank
+#brew cask install spotify
+#brew cask install outbank
 brew cask install google-chrome
 brew cask install 1password
 brew cask install tunnelblick
-brew cask install vscode
+#brew cask install vscode
 
 # optional packages
 #brew cask install sublime-text
@@ -49,20 +34,20 @@ brew cask install vscode
 #brew cask install virtualbox
 #brew cask install vlc
 
-brew linkapps
-brew cleanup
-
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# bash-completions
+# Install command line tools
+brew install zsh
+brew install git
+brew install maven
+brew install node
 brew install bash-completion
-brew tap homebrew/completions
-cd /usr/local/etc/bash_completion.d
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion
-ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion
 
-# powerline fonts
-# https://github.com/powerline/fonts
-# Meslo: https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf
-# https://gist.github.com/kevin-smets/8568070
+# optional packages
+#brew install ssh-copy-id
+#brew install httpie
+#brew install tmux
+#brew install telnet
+#gem install tmuxinator
+#brew install dvm
+#brew install terraform
+
+brew cleanup
