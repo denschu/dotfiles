@@ -19,32 +19,40 @@ brew tap caskroom/versions
 brew cask install java8
 brew cask install iterm2
 brew cask install slack
-#brew cask install spotify
-#brew cask install outbank
+brew cask install spotify
+brew cask install outbank
 brew cask install google-chrome
 brew cask install 1password
 brew cask install tunnelblick
 brew cask install visual-studio-code
 brew cask install intellij-idea
 brew cask install google-backup-and-sync
+brew cask install whatsapp
+brew cask install sourcetree
+brew cask install aerial
+brew cask install rocket-chat
+brew cask install sublime-text
+brew cask install postman
+brew cask install the-unarchiver
+brew cask install virtualbox
 
 # optional packages
-#brew cask install sublime-text
-#brew cask install the-unarchiver
 #brew cask install vagrant
 #brew cask install forklift
 #brew cask install vagrant
-#brew cask install virtualbox
 #brew cask install vlc
 
 # Install command line tools
-brew install zsh
 brew install git
 brew install maven
 brew install node
 brew install bash-completion
+brew install yarn
+brew install nvm
+brew install ansible
 
 # optional packages
+#brew install zsh
 #brew install ssh-copy-id
 #brew install httpie
 #brew install tmux

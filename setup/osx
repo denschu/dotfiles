@@ -85,11 +85,7 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 
 defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Dennis Schulte - +49-151-52882395"
 
-###############################################################################
-# Atom                                                                      #
-###############################################################################
-defaults write com.github.atom AppleShowAllFiles -bool true
-###############################################################################
+##############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" \
