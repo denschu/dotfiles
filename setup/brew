@@ -35,11 +35,10 @@ brew cask install sublime-text
 brew cask install postman
 brew cask install the-unarchiver
 brew cask install virtualbox
+brew cask install vagrant
 
 # optional packages
-#brew cask install vagrant
 #brew cask install forklift
-#brew cask install vagrant
 #brew cask install vlc
 
 # Install command line tools
@@ -50,6 +49,8 @@ brew install bash-completion
 brew install yarn
 brew install nvm
 brew install ansible
+brew install terraform
+brew cask install dive
 
 # optional packages
 #brew install zsh
@@ -59,6 +60,5 @@ brew install ansible
 #brew install telnet
 #gem install tmuxinator
 #brew install dvm
-#brew install terraform
 
 brew cleanup

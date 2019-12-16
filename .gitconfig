@@ -3,7 +3,7 @@
 
 [user]
 	name = Dennis Schulte
-	email = dennis.schulte@codecentric.de
+	email = mail@dennis-schulte.de
 
 [core]
 	excludesfile = /Users/denschu/.dotfiles/.gitignore
@@ -11,9 +11,10 @@
 	compression = -1
 
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 
 [push]
 	default = matching
@@ -37,3 +38,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/denschu/.stCommitMsg

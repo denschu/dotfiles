@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
 
 export JAVA_8_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA_HOME=$JAVA_8_HOME
+export JAVA_11_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_HOME=$JAVA_11_HOME
+#export JAVA_TOOL_OPTIONS="-Djavax.net.ssl.trustAnchors=$JAVA_HOME/lib/security/cacerts -Djavax.net.ssl.trustStore=$JAVA_HOME/lib/security/cacerts"
 
 # Maven configuration
 export M2_REPO="$HOME/.m2/repository"
 export M2_HOME="/usr/local/Cellar/maven/3.5.3/libexec"
 export M2="/usr/local/Cellar/maven/3.5.3/libexec/bin"
-export MAVEN_OPTS="-Djavax.net.ssl.trustStore=/Users/denschu/.keystore"
+#export MAVEN_OPTS="-Djavax.net.ssl.trustStore=/Users/denschu/.keystore"
 
 #AWS
 export AWS_EB_PROFILE=codecentric
